@@ -28,12 +28,12 @@ public class Main {
             }
         }
 
-        String map=hs+" ";
-        l.log(Level.INFO,()->"before Sorting "+ map);
+        String hmap=hs+" ";
+        l.log(Level.INFO,()->"before Sorting "+ hmap);
 
-        List<Map.Entry<String, Integer>> sortedMap = hs.entrySet().stream()
+        List<Map.Entry<String, Integer>> sortedHmap = hs.entrySet().stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).toList();
 
-        l.log(Level.INFO,()->"After Sorting "+ sortedMap);
+        l.log(Level.INFO,()->"After Sorting "+ sortedHmap);
     }
 }
