@@ -7,34 +7,27 @@ import java.util.logging.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String str=" ";
         Logger l=Logger.getLogger("com.api.jar");
         HashMap<String,Integer> hs=new HashMap<>();
         String se = "C:\\Users\\Tringapps-User2\\Documents\\example.txt";
         File file = new File(se);
-        BufferedReader br
-                = new BufferedReader(new FileReader(file));
-        String[] words;
-        String st;
+        Scanner sc = new Scanner(file);
+        String word;
 
-        while ((st = br.readLine()) != null)
+        while(sc.hasNext())
         {
-            StringBuilder btt = new StringBuilder();
-
-            btt.append(str=st + str);
-        }
-        words=str.split(" ");
-        for(String word:words){
-            Integer inter = hs.get(word);
-            if (inter == null)
+            word = sc.next();
+            if(hs.containsKey(word))
+            {
+                int count = hs.get(word) + 1;
+                hs.put(word,count);
+            }
+            else
             {
                 hs.put(word, 1);
             }
-
-            else {
-                hs.put(word, inter + 1);
-            }
         }
+
         String sor=hs+" ";
         l.log(Level.INFO,()->"before Sorting "+ sor);
 
