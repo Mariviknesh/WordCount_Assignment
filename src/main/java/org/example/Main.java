@@ -9,9 +9,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String str=" ";
         Logger l=Logger.getLogger("com.api.jar");
-        HashMap hs=new HashMap<>();
-        File file = new File(
-                "C:\\Users\\Tringapps-User2\\Documents\\example.txt");
+        HashMap<String,Integer> hs=new HashMap<>();
+        String se = "C:\\Users\\Tringapps-User2\\Documents\\example.txt";
+        File file = new File(se);
         BufferedReader br
                 = new BufferedReader(new FileReader(file));
         String[] words;
