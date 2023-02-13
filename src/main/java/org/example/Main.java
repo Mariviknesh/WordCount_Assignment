@@ -18,11 +18,11 @@ public class Main {
         String st;
         while ((st = br.readLine()) != null)
         {
-            str=st+str;
+            str=st + str;
         }
         words=str.split(" ");
         for(String word:words){
-            Integer inter = (Integer) hs.get(word);
+            Integer inter = hs.get(word);
             if (inter == null)
             {
                 hs.put(word, 1);
