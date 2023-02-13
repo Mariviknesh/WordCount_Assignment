@@ -16,9 +16,12 @@ public class Main {
                 = new BufferedReader(new FileReader(file));
         String[] words;
         String st;
+
         while ((st = br.readLine()) != null)
         {
-            str=st + str;
+            StringBuilder btt = new StringBuilder();
+
+            btt.append(str=st + str);
         }
         words=str.split(" ");
         for(String word:words){
