@@ -6,10 +6,10 @@ import java.util.logging.*;
 
 
 public class Main {
-    public static <LinkedHashMap> void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         String str=" ";
         Logger l=Logger.getLogger("com.api.jar");
-        HashMap<String,Integer> hs=new HashMap<>();
+        HashMap hs=new HashMap<>();
         File file = new File(
                 "C:\\Users\\Tringapps-User2\\Documents\\example.txt");
         BufferedReader br
@@ -22,14 +22,14 @@ public class Main {
         }
         words=str.split(" ");
         for(String word:words){
-            Integer integer = hs.get(word);
-            if (integer == null)
+            Integer inter = (Integer) hs.get(word);
+            if (inter == null)
             {
                 hs.put(word, 1);
             }
 
             else {
-                hs.put(word, integer + 1);
+                hs.put(word, inter + 1);
             }
         }
         String sor=hs+" ";
