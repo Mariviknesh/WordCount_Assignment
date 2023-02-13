@@ -11,12 +11,12 @@ public class Main {
         HashMap<String,Integer> hs=new HashMap<>();
         String se = "C:\\Users\\Tringapps-User2\\Documents\\example.txt";
         File file = new File(se);
-        Scanner sc = new Scanner(file);
+        Scanner mysc = new Scanner(file);
         String word;
 
-        while(sc.hasNext())
+        while(mysc.hasNext())
         {
-            word = sc.next();
+            word = mysc.next();
             if(hs.containsKey(word))
             {
                 int count = hs.get(word) + 1;
@@ -28,12 +28,12 @@ public class Main {
             }
         }
 
-        String sor=hs+" ";
-        l.log(Level.INFO,()->"before Sorting "+ sor);
+        String map=hs+" ";
+        l.log(Level.INFO,()->"before Sorting "+ map);
 
-        List<Map.Entry<String, Integer>> sorted = hs.entrySet().stream()
+        List<Map.Entry<String, Integer>> sortedMap = hs.entrySet().stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).toList();
 
-        l.log(Level.INFO,()->"After Sorting "+ sorted);
+        l.log(Level.INFO,()->"After Sorting "+ sortedMap);
     }
 }
